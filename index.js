@@ -6,8 +6,8 @@ const favRouter = require("./src/routes/favourite.js");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 dotenv.config();
+app.use(cors());
 
 app.use("/api/user", userRouter);
 app.use("/api/fav", favRouter);

@@ -37,10 +37,11 @@ const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     db.query(
-      "SELECT pass FROM users WHERE username =?",
+      "SELECT * FROM users WHERE username =?",
       [username],
       (err, result) => {
         if (err) throw err;
+        console.log(result);
         if (result.length === 0) {
           return res.status(404).json({ message: "User not found" });
         }

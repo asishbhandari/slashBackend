@@ -2,10 +2,10 @@ const db = require("../db/dbConfig");
 
 const getAll = async (req, res) => {
   try {
-    const { userID } = req.query;
+    const { userId } = req.query;
     db.query(
-      "SELECT * FROM favourite WHERE userID = ?",
-      [userID],
+      "SELECT * FROM favourite WHERE userId = ?",
+      [userId],
       (err, result) => {
         if (err) throw err;
         return res.json(result);
@@ -21,7 +21,7 @@ const addUni = async (req, res) => {
 
     db.query(
       "INSERT INTO favourite (userId, universityname, state,webpage) VALUES (?, ?, ?,?)",
-      [userId, universityename, state, webpage],
+      [userId, universityname, state, webpage],
       (err, result) => {
         if (err) throw err;
         res
