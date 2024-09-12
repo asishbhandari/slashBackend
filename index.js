@@ -10,7 +10,7 @@ app.use(cors());
 dotenv.config();
 
 app.use("/api/user", userRouter);
-app.use("/api/user", favRouter);
+app.use("/api/fav", favRouter);
 
 const PORT = 5000;
 app.listen(PORT, () => {
